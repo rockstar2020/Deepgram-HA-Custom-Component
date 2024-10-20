@@ -9,7 +9,7 @@ After a satisfying results of my tests with Deppgram's STT, I decided to write t
 Additionally, since I'm using multiple satellite ESPHome's microphones in my home, I added a bit of noise reduction and volume bump to the audio recieved from the mic stream in order to get a more accurate sppech to text conversion from Deepgram.
 
 <b>Steps to set up this integration:</b>
-1. Copy all contents of the custom component folder and paste it in your own HA's custom component folder.
+1. Navigate to your home assistant custom_components folder and create a new folder called 'deepgram_stt'. Then copy all the files located in the custom components from this repository and paste it inside the newly created folder.
 2. Register on Deepgram and generate your API Key.
 3. Add the following lines in your configuration YAML:
 ```
