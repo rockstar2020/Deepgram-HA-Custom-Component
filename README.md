@@ -11,12 +11,12 @@ Additionally, since I'm using multiple satellite ESPHome's microphones in my hom
 **How to install:**
 1. Copy all contents of the custom component folder and paste it in your own HA's custom component folder.
 2. Add the following lines in your configuration YAML:
-'''
+```
 stt:
   - platform: deepgram_stt
     stt_api_key: 'Your-API-Key'
     vol_inc: 25 #Int Value of Volume to be increased
-'''
+```
 
 **Important Note:**
 Please keep in mind that this method of STT integration within home assistant for some reason is not fully supported hence the reason you should expect to received similar error message in your home assistant log as below:
