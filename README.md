@@ -10,14 +10,15 @@ Additionally, since I'm using multiple satellite ESPHome's microphones in my hom
 
 **How to install:**
 1. Copy all contents of the custom component folder and paste it in your own HA's custom component folder.
-2. Add the following lines in your configuration YAML:
+2. Register on Deepgram and generate your API Key.
+3. Add the following lines in your configuration YAML:
 ```
 stt:
   - platform: deepgram_stt
     stt_api_key: 'Your-API-Key'
     vol_inc: 25 #Int Value of Volume to be increased
 ```
-3. Restart Home Assistant
+4. Restart Home Assistant
 <br/>
 **Important Note:**
 <br/>
