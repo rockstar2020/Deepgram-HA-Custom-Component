@@ -8,7 +8,7 @@ That's a pretty good deal!
 After a satisfying results of my tests with Deppgram's STT, I decided to write this custom component.
 Additionally, since I'm using multiple satellite ESPHome's microphones in my home, I added a bit of noise reduction and volume bump to the audio recieved from the mic stream in order to get a more accurate sppech to text conversion from Deepgram.
 
-**How to install:**
+<b>How to install:</b>
 1. Copy all contents of the custom component folder and paste it in your own HA's custom component folder.
 2. Register on Deepgram and generate your API Key.
 3. Add the following lines in your configuration YAML:
@@ -20,7 +20,7 @@ stt:
 ```
 4. Restart Home Assistant
 <br/>
-**Important Note:**
+<b>Important Note:</b>
 <br/>
 Please keep in mind that this method of STT integration within home assistant for some reason is not fully supported hence the reason you should expect to received similar error message in your home assistant log as below:
 <br/><br/>
