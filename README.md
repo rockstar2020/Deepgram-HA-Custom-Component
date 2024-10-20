@@ -17,7 +17,8 @@ stt:
     stt_api_key: 'Your-API-Key'
     vol_inc: 25 #Int Value of Volume to be increased
 ```
-
+3. Restart Home Assistant
+<br/>
 **Important Note:**
 <br/>
 Please keep in mind that this method of STT integration within home assistant for some reason is not fully supported hence the reason you should expect to received similar error message in your home assistant log as below:
