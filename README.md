@@ -1,4 +1,4 @@
-# Deepgram-s-HA-Custom-Component
+# Deepgram-HA-Custom-Component
 
 I was in the search of a more accurate/affordable API-based STT service and I came across Deepgram.
 At the time of uploading this repository Deepgram offers $200 credit with no expiry pay-as-you-go service.
