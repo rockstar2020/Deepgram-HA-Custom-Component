@@ -59,23 +59,27 @@ def process_audio(audio_bytes,sample_rate=16000, channels=1, sampwidth=2, volume
         wav_file.setframerate(sample_rate) # Set the sample rate (e.g., 16000 Hz)
         wav_file.writeframes(audio_bytes)
     wav_buffer.seek(0)
-    sample_rate, data = wavfile.read(wav_buffer)
-    # Apply noise reduction
-    reduced_noise = nr.reduce_noise(y=data, sr=sample_rate)
-    # Convert the processed numpy array back to AudioSegment
-    processed_audio = AudioSegment(
-        reduced_noise.tobytes(),
-        frame_rate=sample_rate,
-        sample_width=reduced_noise.dtype.itemsize,
-        channels=1  # Adjust this if your audio has multiple channels
-    )
-    # Increase volume
-    louder_audio = processed_audio + volume_increase_db  # Increase volume by specified dB
-    # Export the modified audio to bytes
-    output_wav_io = io.BytesIO()
-    louder_audio.export(output_wav_io, format="wav")
-    output_wav_io.seek(0)
-    return output_wav_io
+    ### Check if additional filtering is required ###
+    if volume_increase_db > 0:
+        sample_rate, data = wavfile.read(wav_buffer)
+        # Apply noise reduction
+        reduced_noise = nr.reduce_noise(y=data, sr=sample_rate)
+        # Convert the processed numpy array back to AudioSegment
+        processed_audio = AudioSegment(
+            reduced_noise.tobytes(),
+            frame_rate=sample_rate,
+            sample_width=reduced_noise.dtype.itemsize,
+            channels=1  # Adjust this if your audio has multiple channels
+        )
+        # Increase volume
+        louder_audio = processed_audio + volume_increase_db  # Increase volume by specified dB
+        # Export the modified audio to bytes
+        output_wav_io = io.BytesIO()
+        louder_audio.export(output_wav_io, format="wav")
+        output_wav_io.seek(0)
+        return output_wav_io
+    else:
+        return wav_buffer
 
 class DeepgramSTTServer(Provider):
     """The Deepgram STT API provider."""
